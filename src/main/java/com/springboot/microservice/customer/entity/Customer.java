@@ -1,6 +1,5 @@
 package com.springboot.microservice.customer.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
@@ -39,11 +38,6 @@ public class Customer {
     @OneToMany( cascade = CascadeType.ALL)
     @JoinColumn(name="customer_id")
     private List<CustomerAddress> customerAddresses;
-
-    @JsonIgnore
-    @OneToMany()
-    @JoinColumn(name="customer_id")
-    private List<Order> orders;
 
 
     @Column(name="active_flag",columnDefinition = "TINYINT default 1", length = 1)

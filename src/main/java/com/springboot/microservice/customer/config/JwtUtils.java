@@ -25,7 +25,7 @@ public class JwtUtils {
                 .setIssuer("ABC_Ltd")
                 .setAudience("XYZ_Ltd")
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(1)))
+                .setExpiration(new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(2 )))
                 .signWith(SignatureAlgorithm.HS512, Base64.getEncoder().encode(secretKey.getBytes()))
                 .compact();
     }
