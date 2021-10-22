@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 @Component
 public class JwtUtils {
-    @Value("$app.jwtSecret")
+    @Value("${app.jwtSecret}")
     private String secretKey;
 
     // code to generate Token

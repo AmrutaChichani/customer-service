@@ -58,7 +58,7 @@ public class AuthController {
         return ResponseEntity.ok().body(jwt);
 
     }
-    @PostMapping("/singUp")
+    @PostMapping("/signUp")
     public ResponseEntity<String> registerUser(@Valid @RequestBody SignupRequest signupRequest){
         if(Boolean.TRUE.equals(userDAO.existsByUserName(signupRequest.getUsername()))){
             return ResponseEntity.badRequest().body("Username already exists. Please try with another name");
